@@ -5,6 +5,7 @@ def main(page: ft.Page):
     def github(e):
         page.launch_url("https://github.com/tct123")
         page.update()
+
     def dataprotection(e):
         page.launch_url("https://tct123.github.io")
         page.update()
@@ -21,20 +22,24 @@ def main(page: ft.Page):
             ft.PopupMenuButton(
                 items=[
                     ft.PopupMenuItem(text="GitHub", icon=ft.icons.WEB, on_click=github),
-                    ft.PopupMenuItem(text="Dataprotection", icon=ft.icons.WEB, on_click=dataprotection)
+                    ft.PopupMenuItem(
+                        text="Dataprotection",
+                        icon=ft.icons.WARNING,
+                        on_click=dataprotection,
+                    ),
                 ]
             )
         ],
     )
 
-    page.navigation_bar = ft.NavigationBar(
-        destinations=[
-            ft.NavigationDestination(icon=ft.icons.EXPLORE, label="Explore"),
-            ft.NavigationDestination(icon=ft.icons.COMMUTE, label="Commute"),
-            ft.NavigationDestination(icon=ft.icons.BOOKMARK_BORDER, label="Explore"),
-        ],
-        # bgcolor=ft.colors.RED,
-    )
+    # page.navigation_bar = ft.NavigationBar(
+    #    destinations=[
+    #        ft.NavigationDestination(icon=ft.icons.EXPLORE, label="Explore"),
+    #        ft.NavigationDestination(icon=ft.icons.COMMUTE, label="Commute"),
+    #        ft.NavigationDestination(icon=ft.icons.BOOKMARK_BORDER, label="Explore"),
+    #    ],
+    #    # bgcolor=ft.colors.RED,
+    # )
     result = ft.TextField(
         text_align=ft.TextAlign.RIGHT,
         expand=1,
