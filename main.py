@@ -5,6 +5,9 @@ def main(page: ft.Page):
     def github(e):
         page.launch_url("https://github.com/tct123")
         page.update()
+    def dataprotection(e):
+        page.launch_url("https://tct123.github.io")
+        page.update()
 
     page.title = "Calculator"
     # page.window_full_screen = True
@@ -17,7 +20,8 @@ def main(page: ft.Page):
         actions=[
             ft.PopupMenuButton(
                 items=[
-                    ft.PopupMenuItem(text="GitHub", icon=ft.icons.WEB, on_click=github)
+                    ft.PopupMenuItem(text="GitHub", icon=ft.icons.WEB, on_click=github),
+                    ft.PopupMenuItem(text="Dataprotection", icon=ft.icons.WEB, on_click=dataprotection)
                 ]
             )
         ],
