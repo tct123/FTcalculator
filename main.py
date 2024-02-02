@@ -1,7 +1,16 @@
 import flet as ft
+import dataprotection as dn
 
 
 def main(page: ft.Page):
+    page.auto_scroll = True
+    dlg = ft.AlertDialog(
+        title=ft.Text(dn.heading),
+        content=ft.Column(controls=[ft.Text(dn.content)], scroll=True),
+        modal=True,
+    )
+    page.update()
+
     def github(e):
         page.launch_url("https://github.com/tct123")
         page.update()
@@ -10,7 +19,13 @@ def main(page: ft.Page):
         page.launch_url("https://tct123.github.io")
         page.update()
 
+    def dataprotectionpopup(e):
+        page.dialog = dlg
+        dlg.open = True
+        page.update()
+
     page.title = "Calculator"
+
     # page.window_full_screen = True
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.MainAxisAlignment.CENTER
@@ -25,7 +40,7 @@ def main(page: ft.Page):
                     ft.PopupMenuItem(
                         text="Dataprotection",
                         icon=ft.icons.WARNING,
-                        on_click=dataprotection,
+                        on_click=dataprotectionpopup,
                     ),
                 ]
             )
