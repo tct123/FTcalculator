@@ -13,16 +13,12 @@ def main(page: ft.Page):
 
     def github(e):
         page.launch_url("https://github.com/tct123")
-        page.update()
 
     def dataprotection(e):
         page.launch_url("https://tct123.github.io")
-        page.update()
 
     def dataprotectionpopup(e):
-        page.dialog = dlg
-        dlg.open = True
-        page.update()
+        page.open(dlg)
 
     page.title = "Calculator"
 
@@ -32,15 +28,15 @@ def main(page: ft.Page):
 
     page.appbar = ft.AppBar(
         title=ft.Text(page.title),
-        bgcolor=ft.colors.BLUE,
+        bgcolor=ft.Colors.BLUE,
         center_title=True,
         actions=[
             ft.PopupMenuButton(
                 items=[
-                    ft.PopupMenuItem(text="GitHub", icon=ft.icons.WEB, on_click=github),
+                    ft.PopupMenuItem(text="GitHub", icon=ft.Icons.WEB, on_click=github),
                     ft.PopupMenuItem(
                         text="Dataprotection",
-                        icon=ft.icons.WARNING,
+                        icon=ft.Icons.WARNING,
                         on_click=dataprotectionpopup,
                     ),
                 ]
@@ -50,11 +46,11 @@ def main(page: ft.Page):
 
     # page.navigation_bar = ft.NavigationBar(
     #    destinations=[
-    #        ft.NavigationDestination(icon=ft.icons.EXPLORE, label="Explore"),
-    #        ft.NavigationDestination(icon=ft.icons.COMMUTE, label="Commute"),
-    #        ft.NavigationDestination(icon=ft.icons.BOOKMARK_BORDER, label="Explore"),
+    #        ft.NavigationDestination(icon=ft.Icons.EXPLORE, label="Explore"),
+    #        ft.NavigationDestination(icon=ft.Icons.COMMUTE, label="Commute"),
+    #        ft.NavigationDestination(icon=ft.Icons.BOOKMARK_BORDER, label="Explore"),
     #    ],
-    #    # bgcolor=ft.colors.RED,
+    #    # bgcolor=ft.Colors.RED,
     # )
     result = ft.TextField(
         text_align=ft.TextAlign.RIGHT,
