@@ -7,7 +7,7 @@ def main(page: ft.Page):
     dlg = ft.AlertDialog(
         title=ft.Text(dn.heading),
         content=ft.Column(controls=[ft.Text(dn.content)], scroll=True),
-        modal=True,
+        # modal=True,
     )
     page.update()
 
