@@ -16,3 +16,14 @@ def HELLOMSG(page):
         target_key="HELLOWORLD",
         langcode=langcode,
     )
+
+
+def MENUEHINTMSG(page):
+    myplatfom = str(page.platform)
+    langcode = str(locale(platform=myplatfom)).split("_")[0]
+    region = str(locale(platform=myplatfom)).split("_")[1]
+    return tr(
+        csv_file=trfile,
+        target_key="SHOWMENUEHINT",
+        langcode=langcode,
+    )

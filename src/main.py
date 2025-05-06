@@ -1,5 +1,6 @@
 import flet as ft
 import dataprotection as dn
+from localisations import *
 
 
 def main(page: ft.Page):
@@ -33,6 +34,7 @@ def main(page: ft.Page):
         center_title=True,
         actions=[
             ft.PopupMenuButton(
+                tooltip=MENUEHINTMSG(page=page),
                 items=[
                     ft.PopupMenuItem(text="GitHub", icon=ft.Icons.WEB, on_click=github),
                     ft.PopupMenuItem(
@@ -40,7 +42,7 @@ def main(page: ft.Page):
                         icon=ft.Icons.WARNING,
                         on_click=dataprotectionpopup,
                     ),
-                ]
+                ],
             )
         ],
     )
