@@ -27,3 +27,25 @@ def MENUEHINTMSG(page):
         target_key="SHOWMENUEHINT",
         langcode=langcode,
     )
+
+
+def TITLE(page):
+    myplatfom = str(page.platform)
+    langcode = str(locale(platform=myplatfom)).split("_")[0]
+    region = str(locale(platform=myplatfom)).split("_")[1]
+    return tr(
+        csv_file=trfile,
+        target_key="TITLE",
+        langcode=langcode,
+    )
+
+
+def DATAPROTECTIONITEM(page):
+    myplatfom = str(page.platform)
+    langcode = str(locale(platform=myplatfom)).split("_")[0]
+    region = str(locale(platform=myplatfom)).split("_")[1]
+    return tr(
+        csv_file=trfile,
+        target_key="DATAPROTECTIONITEM",
+        langcode=langcode,
+    )

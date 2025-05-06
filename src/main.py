@@ -22,7 +22,7 @@ def main(page: ft.Page):
     def dataprotectionpopup(e):
         page.open(dlg)
 
-    page.title = "Calculator"
+    page.title = TITLE(page=page)
 
     # page.window_full_screen = True
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -38,7 +38,7 @@ def main(page: ft.Page):
                 items=[
                     ft.PopupMenuItem(text="GitHub", icon=ft.Icons.WEB, on_click=github),
                     ft.PopupMenuItem(
-                        text="Dataprotection",
+                        text=DATAPROTECTIONITEM(page=page),
                         icon=ft.Icons.WARNING,
                         on_click=dataprotectionpopup,
                     ),
