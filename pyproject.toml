@@ -1,5 +1,5 @@
 [project]
-name = "ftcalculator"
+name = "mycalculator"
 version = "0.1.0"
 description = ""
 readme = "README.md"
@@ -24,6 +24,12 @@ copyright = "Copyright (C) 2025 by Creative Media Group"
 
 [tool.flet.app]
 path = "src"
+
+[tool.flet.android]
+dependencies = ["pyjnius"]
+
+[tool.flet.ios]
+dependencies = ["pyobjus"]
 
 #[tool.flet.android.signing]
 # store and key passwords can be passed with `--android-signing-key-store-password`
