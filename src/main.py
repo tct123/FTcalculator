@@ -4,6 +4,8 @@ from localisations import *
 
 
 def main(page: ft.Page):
+    hf = ft.HapticFeedback()
+    page.overlay.append(hf)
     page.auto_scroll = True
     dlg = ft.AlertDialog(
         title=ft.Text(dn.heading),
