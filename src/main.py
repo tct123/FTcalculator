@@ -38,7 +38,9 @@ def main(page: ft.Page):
             ft.PopupMenuButton(
                 tooltip=MENUEHINTMSG(page=page),
                 items=[
-                    ft.PopupMenuItem(text="GitHub", icon=ft.Icons.WEB, on_click=github),
+                    ft.PopupMenuItem(
+                        text="GitHub", icon=ft.Icons.DEVELOPER_BOARD, on_click=github
+                    ),
                     ft.PopupMenuItem(
                         text=DATAPROTECTIONITEM(page=page),
                         icon=ft.Icons.WARNING,
