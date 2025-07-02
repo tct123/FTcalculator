@@ -29,7 +29,7 @@ def main(page: ft.Page):
     # page.window_full_screen = True
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.MainAxisAlignment.CENTER
-
+    page.adaptive = True
     page.appbar = ft.AppBar(
         title=ft.Text(page.title),
         bgcolor=ft.Colors.BLUE,
